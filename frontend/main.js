@@ -28,4 +28,5 @@ function onTileClicked(index) {
     game.makeMove(index);
     gameView.updateBoard(game);
     game.nextTurn();
+    //hello
 }
