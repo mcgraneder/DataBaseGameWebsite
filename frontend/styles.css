@@ -1,0 +1,125 @@
+/* here we will style our left box which contains th eheading etc */
+
+
+* {
+    /* the box sizzing borderbox makes 
+    the divs stay in the outtermost div */
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: "Merriweather Sans", sans-serif;
+    color: #4c6986;
+}
+
+/* next we will style the wrapper div this wrapper
+wraps thew whole game */
+.wrapper {
+
+    /* for testing we will give this a colour so we can
+    see what were working with */
+    height: 800px;
+    /* background-color: yellow; */
+    max-width: 1440px;
+    /* we can use flex to centre the contents of the wrapper */
+    display: flex;
+    /* this alligns the dix center verticall */
+    align-items: center;
+    /* this alligns the div horizontally */
+    justify-content: center;
+
+    /* to center the whole wrapper we use margin */
+    margin: 0 auto;
+    border: 5px solid yellow;
+
+}
+/* next we will style the button */
+.restart {
+    background-color: white;
+    width: 175px;
+    height: 50px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    border: 2px solid;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-weight: bold;
+    /* giv margin top to prevent the button from going outside */
+    /* margin: top; */
+
+}
+
+/* THIS STYLE LETS US CHANGE THE BUTTON APPEARANCE ON HOVER */
+.restart:hover {
+    background-color: #4C6986;
+    color: white;
+    
+    width: 185px;
+    height: 60px;
+}
+
+h1 {
+    border: 5px solid yellow;
+    font-size: 70px;
+}
+
+.game {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    border: 2px solid yellow;
+    color: #9a9a9a;
+}
+
+/* flex 1 lets them take up as much space as they can */
+.header .player-x {
+    flex: 1;
+    border-bottom: 5px solid #eee;
+    padding-bottom: 8px;
+}
+
+.header .player-o {
+    flex: 1;
+    border-bottom: 5px solid #eee;
+    padding-bottom: 8px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0px;
+    flex: 1;
+    padding: 10px;
+}
+
+.board-tile {
+    display: flex;
+    /* this alligns the dix center verticall */
+    align-items: center;
+    /* this alligns the div horizontally */
+    justify-content: center;
+    font-size: 80px;
+    cursor: pointer;
+}
+
+.board-tile:not(:nth-child(3n)) {
+    border-right: 2px solid #9a9a9a;
+}
+
+.board-tile:not(:nth-last-child(-n + 3)) {
+    border-bottom: 2px solid #9a9a9a;
+}
+
+.board-tile:hover {
+    background: #eee;
+}
+
