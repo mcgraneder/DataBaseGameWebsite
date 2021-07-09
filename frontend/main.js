@@ -5,6 +5,9 @@ let game = new Game();
 let gameView = new GameView();
 gameView.updateBoard(game);
 
+document.querySelector(".restart").addEventListener("click", () => {
+    startNewGame();
+})
 //next we want to create an event lustener which detects if we clock
 //on a board tile and then we can set the tile we clocked to an x or o
 let tiles = document.querySelectorAll(".board-tile")
@@ -27,6 +30,15 @@ function onTileClicked(index) {
     //change turn
     game.makeMove(index);
     gameView.updateBoard(game);
-    game.nextTurn();
+   
+    // game.checkWin();
     //hello
 }
+
+function startNewGame() {
+    game = new Game();
+    gameView.updateBoard(game);
+    
+}
+
+gameView.updateBoard(game);

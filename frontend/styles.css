@@ -13,6 +13,9 @@ body {
     color: #4c6986;
 }
 
+.title {
+    max-width: 500;
+}
 /* next we will style the wrapper div this wrapper
 wraps thew whole game */
 .wrapper {
@@ -27,11 +30,13 @@ wraps thew whole game */
     /* this alligns the dix center verticall */
     align-items: center;
     /* this alligns the div horizontally */
-    justify-content: center;
+    justify-content: space-between;
 
     /* to center the whole wrapper we use margin */
     margin: 0 auto;
-    border: 5px solid yellow;
+    padding: 40px;
+    /* border: 5px solid yellow; */
+
 
 }
 /* next we will style the button */
@@ -62,7 +67,7 @@ wraps thew whole game */
 }
 
 h1 {
-    border: 5px solid yellow;
+    /* border: 5px solid yellow; */
     font-size: 70px;
 }
 
@@ -75,7 +80,7 @@ h1 {
 
 .header {
     display: flex;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     color: #9a9a9a;
 }
 
@@ -86,10 +91,20 @@ h1 {
     padding-bottom: 8px;
 }
 
+.player-x.active {
+    color: #42BED7;
+    border-color: #42BED7;
+}
+
 .header .player-o {
     flex: 1;
     border-bottom: 5px solid #eee;
     padding-bottom: 8px;
+}
+
+.player-o.active {
+    color: #D7BAFB;
+    border-color: #D7BAFB;
 }
 
 .board {
@@ -121,5 +136,27 @@ h1 {
 
 .board-tile:hover {
     background: #eee;
+}
+
+.tile-X {
+    color: #42BED7;
+}
+
+.tile-O {
+    color: #D7BAFB;
+}
+
+.tiles-win span {
+    color: #1fd40e;
+}
+
+@media only screen and (max-width: 1000px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .left {
+        margin-bottom: 50px;
+    }
 }
 
